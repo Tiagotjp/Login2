@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: 
+        linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff),
+        url('https://source.unsplash.com/1600x900/?abstract,tech') no-repeat center center fixed;
+    background-blend-mode: overlay;
+    background-size: 400% 400%, cover;
+    animation: gradientBG 15s ease infinite;
+    position: relative; /* Permite posicionar o nome do usuário no topo */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%, center; }
+    50% { background-position: 100% 50%, center; }
+    100% { background-position: 0% 50%, center; }
+}
+
+.container {
+    width: 320px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 255, 0, 0.5);
+    animation: neonBorder 3s infinite alternate;
+}
+
+@keyframes neonBorder {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 255, 0, 0.5); }
+    100% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 35px rgba(255, 0, 255, 0.8), 0 0 45px rgba(255, 255, 0, 0.8); }
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 100%;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.login-form, .register-form {
+    width: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.toggle-form a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.toggle-form a:hover {
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Estilo para o nome do usuário logado na parte superior */
+.user-info {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-size: 18px;
+    display: none; /* Oculto até o login */
+}
+
+.message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+.logout-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    display: none; /* Só aparece após login */
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+

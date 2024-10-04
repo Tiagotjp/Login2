@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registro Neon RGB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Exibir o nome do usuário logado na parte superior -->
+    <div class="user-info" id="userInfo" style="display:none;">
+        <p id="userName"></p>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <div class="toggle-form">
+                    <p>Não tem uma conta? <a href="#" id="showRegister">Registre-se</a></p>
+                </div>
+                <!-- Botão de sair dentro da janela de login -->
+                <button id="logoutBtn" class="logout-btn" style="display:none;">Sair</button>
+            </div>
+
+            <div class="register-form">
+                <h2>Registro</h2>
+                <form id="registerForm">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Registrar</button>
+                </form>
+                <div class="toggle-form">
+                    <p>Já tem uma conta? <a href="#" id="showLogin">Faça login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="message" class="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
